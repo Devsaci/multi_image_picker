@@ -65,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       await  MultiImagePicker.pickImages(
         maxImages: 300,
+          selectedAssets: images,
       );
     } on Exception catch (e) {}
   }
