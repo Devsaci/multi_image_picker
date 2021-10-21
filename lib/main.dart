@@ -71,5 +71,9 @@ class _MyHomePageState extends State<MyHomePage> {
         enableCamera: true,
       );
     } on Exception catch (e) {}
+
+    setState(() {
+      images = resultList;
+    });
   }
 }
