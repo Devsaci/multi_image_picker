@@ -62,5 +62,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future loadAssets() async{
+    try{
+
+    } on Exception catch (e) {
+
+    }
   }
 }
