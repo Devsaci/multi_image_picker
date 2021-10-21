@@ -34,7 +34,10 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         appBar: AppBar(
           // ignore: prefer_const_constructors
-          title: Text("Multi IMage Picker"),
+          title: Text(
+            "Multi Image Picker",
+            style: TextStyle(fontSize: 15),
+          ),
           actions: [
             FlatButton(
               onPressed: () {},
@@ -46,10 +49,14 @@ class _MyHomePageState extends State<MyHomePage> {
         // ignore: prefer_const_constructors
         body: GridView.count(
           crossAxisCount: 3,
-            // ignore: prefer_const_literals_to_create_immutables
-          children: [
-
-            ],
+          // ignore: prefer_const_literals_to_create_immutables
+          children: List.generate(images.length, (index) {
+            return AssetThumb(
+              asset: images[index],
+              width: 300,
+              height: 300,
+            );
+          }),
         ));
   }
 }
