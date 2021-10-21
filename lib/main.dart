@@ -61,6 +61,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void loadAssets() {
+  Future loadAssets() async{
   }
 }
