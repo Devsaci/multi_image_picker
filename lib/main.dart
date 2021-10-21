@@ -29,7 +29,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List<Asset> images = <Asset>[];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,6 +68,12 @@ class _MyHomePageState extends State<MyHomePage> {
         maxImages: 300,
         selectedAssets: images,
         enableCamera: true,
+        // ignore: prefer_const_constructors
+        materialOptions: MaterialOptions(
+          actionBarColor: "red",
+          actionBarTitle: "Example App",
+          selectCircleStrokeColor: "#000000",
+        ),
       );
     } on Exception catch (e) {}
 
