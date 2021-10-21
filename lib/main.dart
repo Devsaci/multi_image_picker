@@ -32,31 +32,32 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          // ignore: prefer_const_constructors
-          title: Text(
-            "Multi Image Picker",
-            style: TextStyle(fontSize: 15),
-          ),
-          actions: [
-            FlatButton(
-              onPressed: () {},
-              // ignore: prefer_const_constructors
-              child: Text("Picked Image"),
-            )
-          ],
-        ),
+      appBar: AppBar(
         // ignore: prefer_const_constructors
-        body: GridView.count(
-          crossAxisCount: 3,
-          // ignore: prefer_const_literals_to_create_immutables
-          children: List.generate(images.length, (index) {
-            return AssetThumb(
-              asset: images[index],
-              width: 300,
-              height: 300,
-            );
-          }),
-        ));
+        title: Text(
+          "Multi Image Picker",
+          style: TextStyle(fontSize: 15),
+        ),
+        actions: [
+          FlatButton(
+            onPressed: () {},
+            // ignore: prefer_const_constructors
+            child: Text("Picked Image"),
+          )
+        ],
+      ),
+      // ignore: prefer_const_constructors
+      body: GridView.count(
+        crossAxisCount: 3,
+        // ignore: prefer_const_literals_to_create_immutables
+        children: List.generate(images.length, (index) {
+          return AssetThumb(
+            asset: images[index],
+            width: 300,
+            height: 300,
+          );
+        }),
+      ),
+    );
   }
 }
