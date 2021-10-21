@@ -33,6 +33,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // ignore: prefer_const_constructors
         title: Text("Multi IMage Picker"),
+        actions: [
+          FlatButton(onPressed: (){}, child: Text("Picked Image"))
+        ],
       ),
       // ignore: prefer_const_constructors
       body: Center(
