@@ -65,20 +65,26 @@ class _MyHomePageState extends State<MyHomePage> {
     List<Asset> resultList = <Asset>[];
     try {
       resultList = await MultiImagePicker.pickImages(
-        maxImages: 300,
-        selectedAssets: images,
-        enableCamera: true,
+          maxImages: 300,
+          selectedAssets: images,
+          enableCamera: true,
         // ignore: prefer_const_constructors
         materialOptions: MaterialOptions(
-          actionBarColor: "red",
-          actionBarTitle: "Example App",
-          selectCircleStrokeColor: "#000000",
+              actionBarColor: "red",
+              actionBarTitle: "Example App",
+              selectCircleStrokeColor: "#000000",
+            ),
+            // ignore: prefer_const_constructors
+            cupertinoOptions: CupertinoOptions(
+          takePhotoIcon: "chat",
+          doneButtonTitle: "Fatto",
         ),
-      );
-    } on Exception catch (e) {}
+          );
+      } on Exception catch (e)
+      {}
 
-    setState(() {
-      images = resultList;
-    });
-  }
+      setState(() {
+        images = resultList;
+      });
+    }
 }
