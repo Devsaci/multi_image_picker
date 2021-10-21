@@ -32,18 +32,24 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+        appBar: AppBar(
+          // ignore: prefer_const_constructors
+          title: Text("Multi IMage Picker"),
+          actions: [
+            FlatButton(
+              onPressed: () {},
+              // ignore: prefer_const_constructors
+              child: Text("Picked Image"),
+            )
+          ],
+        ),
         // ignore: prefer_const_constructors
-        title: Text("Multi IMage Picker"),
-        actions: [
-          FlatButton(
-            onPressed: () {},
-            // ignore: prefer_const_constructors
-            child: Text("Picked Image"),
-          )
-        ],
-      ),
-      // ignore: prefer_const_constructors
-      body: GridView.count(crossAxisCount: 3));
+        body: GridView.count(
+          crossAxisCount: 3,
+            // ignore: prefer_const_literals_to_create_immutables
+          children: [
+
+            ],
+        ));
   }
 }
