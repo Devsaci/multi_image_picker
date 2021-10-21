@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future loadAssets() async {
     try {
-      MultiImagePicker.pickImages(
+      await  MultiImagePicker.pickImages(
         maxImages: 300,
       );
     } on Exception catch (e) {}
