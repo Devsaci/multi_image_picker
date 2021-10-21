@@ -40,9 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         actions: [
           FlatButton(
-            onPressed: () {},
             // ignore: prefer_const_constructors
             child: Text("Picked Image"),
+            onPressed:  loadAssets,
           )
         ],
       ),
@@ -59,5 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
         }),
       ),
     );
+  }
+
+  void loadAssets() {
   }
 }
