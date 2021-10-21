@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
           FlatButton(
             // ignore: prefer_const_constructors
             child: Text("Picked Image"),
-            onPressed:  loadAssets,
+            onPressed: loadAssets,
           )
         ],
       ),
@@ -61,11 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Future loadAssets() async{
-    try{
-
-    } on Exception catch (e) {
-
-    }
+  Future loadAssets() async {
+    try {
+      MultiImagePicker.pickImages(
+        maxImages: 300,
+      );
+    } on Exception catch (e) {}
   }
 }
