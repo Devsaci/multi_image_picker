@@ -29,6 +29,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List<Asset> images = <Asset>[];
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,8 +63,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future loadAssets() async {
+    List<Asset> resultList = <Asset>[];
     try {
-      await MultiImagePicker.pickImages(
+      resultList = await MultiImagePicker.pickImages(
         maxImages: 300,
         selectedAssets: images,
         enableCamera: true,
