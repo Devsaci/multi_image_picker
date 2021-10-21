@@ -5,6 +5,7 @@ void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // ignore: prefer_const_constructors
-      home:  MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
@@ -27,6 +28,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<Asset> images = <Asset>[];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,12 +36,14 @@ class _MyHomePageState extends State<MyHomePage> {
         // ignore: prefer_const_constructors
         title: Text("Multi IMage Picker"),
         actions: [
-          FlatButton(onPressed: (){}, child: Text("Picked Image"))
+          FlatButton(
+            onPressed: () {},
+            // ignore: prefer_const_constructors
+            child: Text("Picked Image"),
+          )
         ],
       ),
       // ignore: prefer_const_constructors
-      body: Center(
-      ),
-    );
+      body: GridView.count(crossAxisCount: 3));
   }
 }
