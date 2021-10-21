@@ -28,6 +28,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<Asset> images = <Asset>[];
+  String _error = 'No Error Detected';
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // ignore: prefer_const_constructors
         title: Text(
           "Multi Image Picker",
+          // ignore: prefer_const_constructors
           style: TextStyle(fontSize: 15),
         ),
         actions: [
@@ -63,28 +65,33 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future loadAssets() async {
     List<Asset> resultList = <Asset>[];
+    String error = 'No Error Detected';
     try {
       resultList = await MultiImagePicker.pickImages(
-          maxImages: 300,
-          selectedAssets: images,
-          enableCamera: true,
+        maxImages: 300,
+        selectedAssets: images,
+        enableCamera: true,
         // ignore: prefer_const_constructors
         materialOptions: MaterialOptions(
-              actionBarColor: "red",
-              actionBarTitle: "Example App",
-              selectCircleStrokeColor: "#000000",
-            ),
-            // ignore: prefer_const_constructors
-            cupertinoOptions: CupertinoOptions(
+          actionBarColor: "red",
+          actionBarTitle: "Example App",
+          selectCircleStrokeColor: "#000000",
+        ),
+        // ignore: prefer_const_constructors
+        cupertinoOptions: CupertinoOptions(
           takePhotoIcon: "chat",
           doneButtonTitle: "Fatto",
         ),
-          );
-      } on Exception catch (e)
-      {}
-
-      setState(() {
-        images = resultList;
-      });
+      );
+    } on Exception catch (e) {
+      error = e.toString();
     }
+    if (!mounted) {
+      return;
+    }
+    setState(() {
+      images = resultList;
+      _error = error;
+    });
+  }
 }
